@@ -20,9 +20,8 @@ jobs:
           rm -rf ./temp/.vscode
 
           for d in ./temp/* ; do
-              echo "$d/config.yaml"
-              if [ -d "$d/config.yaml" ]; then
-                cat "$d/config.yaml"
+              if [ -f "$d/config.yaml" ]; then
+                cat $d/config.yaml
               fi
           done
 
@@ -33,7 +32,7 @@ jobs:
           git add .
           git commit -a -m "Sync."
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
