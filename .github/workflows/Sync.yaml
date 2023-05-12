@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          rm -rf ./temp
           git clone -q --single-branch --depth=1 --branch=master https://github.com/home-assistant/addons.git temp
           
       - name: Create local changes
