@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          git clone -q --single-branch --depth=1 --branch=main https://github.com/home-assistant/addons.git temp
+          git clone -q --single-branch --depth=1 --branch=master https://github.com/home-assistant/addons.git temp
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
