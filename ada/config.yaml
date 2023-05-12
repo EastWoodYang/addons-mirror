@@ -13,7 +13,7 @@ arch:
 audio: true
 homeassistant: 0.102.0
 homeassistant_api: true
-image: docker.nju.edu.cn/homeassistant/{arch}-addon-ada
+image: repo.nju.edu.cn/homeassistant/{arch}-addon-ada
 init: false
 options:
   stt: cloud

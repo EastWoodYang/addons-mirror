@@ -20,7 +20,7 @@ host_uts: true
 privileged:
   - IPC_LOCK
   - NET_ADMIN
-image: docker.nju.edu.cn/homeassistant/{arch}-addon-silabs-multiprotocol
+image: repo.nju.edu.cn/homeassistant/{arch}-addon-silabs-multiprotocol
 init: false
 options:
   device: null

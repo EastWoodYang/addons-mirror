@@ -11,7 +11,7 @@ arch:
   - armv7
   - amd64
 audio: true
-image: docker.nju.edu.cn/homeassistant/{arch}-addon-google_assistant
+image: repo.nju.edu.cn/homeassistant/{arch}-addon-google_assistant
 init: false
 map:
   - share
