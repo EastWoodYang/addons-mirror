@@ -13,7 +13,7 @@ arch:
   - i386
 hassio_api: true
 init: false
-image: docker.nju.edu.cn/homeassistant/{arch}-addon-duckdns
+image: repo.nju.edu.cn/homeassistant/{arch}-addon-duckdns
 map:
   - ssl:rw
 options:

@@ -11,7 +11,7 @@ arch:
   - amd64
   - i386
 boot: manual
-image: docker.nju.edu.cn/homeassistant/{arch}-addon-letsencrypt
+image: repo.nju.edu.cn/homeassistant/{arch}-addon-letsencrypt
 init: false
 map:
   - ssl:rw

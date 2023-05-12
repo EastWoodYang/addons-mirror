@@ -19,7 +19,7 @@ host_uts: true
 privileged:
   - IPC_LOCK
   - NET_ADMIN
-image: docker.nju.edu.cn/homeassistant/{arch}-addon-otbr
+image: repo.nju.edu.cn/homeassistant/{arch}-addon-otbr
 init: false
 options:
   device: null
