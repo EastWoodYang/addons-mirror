@@ -10,7 +10,7 @@ arch:
   - aarch64
   - amd64
   - i386
-image: repo.nju.edu.cn/homeassistant/{arch}-addon-tellstick
+image: dockerproxy.com/homeassistant/{arch}-addon-tellstick
 options:
   devices:
     - house: A

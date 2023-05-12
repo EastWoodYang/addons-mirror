@@ -16,7 +16,7 @@ homeassistant: 2023.3.0b0
 host_ipc: false
 host_network: true
 host_dbus: true
-image: repo.nju.edu.cn/homeassistant/{arch}-addon-matter-server
+image: dockerproxy.com/homeassistant/{arch}-addon-matter-server
 init: false
 options:
   log_level: info

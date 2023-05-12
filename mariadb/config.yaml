@@ -12,7 +12,7 @@ arch:
   - i386
 backup_post: unlock-tables-for-backup
 backup_pre: lock-tables-for-backup
-image: repo.nju.edu.cn/homeassistant/{arch}-addon-mariadb
+image: dockerproxy.com/homeassistant/{arch}-addon-mariadb
 init: false
 options:
   databases:
