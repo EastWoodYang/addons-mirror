@@ -15,11 +15,12 @@ jobs:
         run: |
           rm -rf ./temp/.git
           rm -rf ./temp/.github
-          
+
       - name: Commit files
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "github-actions[bot]"
+          git add .
           git commit -a -m "Sync."
 
       - name: Push changes
