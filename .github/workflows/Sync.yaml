@@ -25,7 +25,7 @@ jobs:
               fi
           done
           shopt -s extglob
-          rm -rf !(.git|temp/)
+          rm -rf !(.git|./temp)
           shopt -u extglob
           cp -r ./temp/* ./
           rm -rf ./temp
