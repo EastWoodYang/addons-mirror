@@ -21,7 +21,7 @@ jobs:
 
           for d in ./temp/* ; do
               if [ -f "$d/config.yaml" ]; then
-                cat $d/config.yaml
+                sed -e 's/image: ghcr.io/image: temp.io/' $d/config.yaml
               fi
           done
 
@@ -32,7 +32,7 @@ jobs:
           git add .
           git commit -a -m "Sync."
 
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
