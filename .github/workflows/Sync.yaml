@@ -9,26 +9,26 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          rm -rf ./temp
-          git clone -q --single-branch --depth=1 --branch=master https://github.com/hassio-addons/repository.git temp
+          rm -rf .temp
+          git clone -q --single-branch --depth=1 --branch=master https://github.com/hassio-addons/repository.git .temp
           
       - name: Create local changes
         run: |
-          rm -rf ./temp/.git
-          rm -rf ./temp/.github
-          rm -rf ./temp/.devcontainer
-          rm -rf ./temp/.vscode
+          rm -rf .temp/.git
+          rm -rf .temp/.github
+          rm -rf .temp/.devcontainer
+          rm -rf .temp/.vscode
 
-          for d in ./temp/* ; do
+          for d in .temp/* ; do
               if [ -f "$d/config.yaml" ]; then
                 sed -i 's/image: ghcr.io/image: ghcr.nju.edu.cn/' $d/config.yaml
               fi
           done
           shopt -s extglob
-          rm -rf !(.git|./temp)
+          rm -rf !(.git|.temp)
           shopt -u extglob
-          cp -r ./temp/* ./
-          rm -rf ./temp
+          cp -r .temp/* ./
+          rm -rf .temp
 
 
       - name: Commit files
