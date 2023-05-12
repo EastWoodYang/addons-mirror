@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           rm -rf ./temp
-          git clone -q --single-branch --depth=1 --branch=master https://github.com/home-assistant/addons.git temp
+          git clone -q --single-branch --depth=1 --branch=master https://github.com/hassio-addons/repository.git temp
           
       - name: Create local changes
         run: |
@@ -21,9 +21,14 @@ jobs:
 
           for d in ./temp/* ; do
               if [ -f "$d/config.yaml" ]; then
-                sed -e 's/image: homeassistant/image: temp.io/' $d/config.yaml
+                sed -i 's/image: ghcr.io/image: ghcr.nju.edu.cn/' $d/config.yaml
               fi
           done
+
+          rm -rf !(.git)
+          cp -r ./temp/* ./
+          rm -rf ./temp
+
 
       - name: Commit files
         run: |
