@@ -24,8 +24,9 @@ jobs:
                 sed -i 's/image: ghcr.io/image: ghcr.nju.edu.cn/' $d/config.yaml
               fi
           done
-
+          shopt -s extglob
           rm -rf !(.git)
+          shopt -u extglob
           cp -r ./temp/* ./
           rm -rf ./temp
 
