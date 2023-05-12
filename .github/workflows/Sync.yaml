@@ -22,7 +22,7 @@ jobs:
           for d in .temp/* ; do
               if [ -f "$d/config.yaml" ]; then
                 sed -i 's/image: ghcr.io/image: ghcr.nju.edu.cn/' $d/config.yaml
-                sed -i 's/image: homeassistant/image: hub.nju.edu.cn\/homeassistant/' $d/config.yaml
+                sed -i 's/image: homeassistant/image: dockerproxy.com\/homeassistant/' $d/config.yaml
               fi
           done
           shopt -s extglob
