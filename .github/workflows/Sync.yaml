@@ -15,6 +15,12 @@ jobs:
         run: |
           rm -rf ./temp/.git
           rm -rf ./temp/.github
+          rm -rf ./temp/.devcontainer
+          rm -rf ./temp/.vscode
+
+          for d in ./temp/* ; do
+              echo "$d"
+          done
 
       - name: Commit files
         run: |
