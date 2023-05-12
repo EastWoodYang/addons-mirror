@@ -22,7 +22,7 @@ jobs:
           for d in .temp/* ; do
               if [ -f "$d/config.yaml" ]; then
                 sed -i 's/image: ghcr.io/image: ghcr.nju.edu.cn/' $d/config.yaml
-                sed -i 's/image: homeassistant/image: docker.nju.edu.cn\/homeassistant/' $d/config.yaml
+                sed -i 's/image: homeassistant/image: repo.nju.edu.cn\/homeassistant/' $d/config.yaml
               fi
           done
           shopt -s extglob
@@ -30,6 +30,8 @@ jobs:
           shopt -u extglob
           cp -r .temp/* ./
           rm -rf .temp
+
+          echo '{"name":"Official add-ons：镜像加速","url":"https://github.com/home-assistant/addons","maintainer":"Home Assistant"}' >> repository.json
 
 
       - name: Commit files
